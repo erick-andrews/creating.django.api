@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import CartItem
 
 # Creating CartItemSerializer to convert json data to models as object instances
-class ClassItemSerializer(serializers.ModelSerializer):
+class CartItemSerializer(serializers.ModelSerializer):
     product_name = serializers.CharField(max_length=200)
     product_price = serializers.FloatField()
     # Setting default to 1, but not required.

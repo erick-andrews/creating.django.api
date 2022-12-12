@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import CartItem
+from .views import CartItemViews
 
 urlpatterns = [
     # not a view in gui sense -- a request handler.
