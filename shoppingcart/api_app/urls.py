@@ -3,5 +3,6 @@ from .views import CartItemViews
 
 urlpatterns = [
     # not a view in gui sense -- a request handler.
-    path('cart-items/', CartItemViews.as_view())
+    path('cart-items/', CartItemViews.as_view()),
+    path('cart-items/<int:id>', CartItemViews.as_view())
 ]
