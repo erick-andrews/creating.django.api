@@ -18,6 +18,16 @@ class CartItemViews(APIView):
             return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
         else:
             return Response({"status": "error", "data": serializer.data}, status=status.HTTP_400_BAD_REQUEST)
+    # Defining Get to retrieve resources
+    def get(self, request, id=None):
+        if id:
+            item = CartItem.objects.get(id=id)
+            serializer = CartItemSerializer(item)
+            return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
+        else:
+            items = CartItem.objects.all()
+            serializer = CartItemSerializer(items, many=True)
+            return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
     
 
 # Create your views here.
